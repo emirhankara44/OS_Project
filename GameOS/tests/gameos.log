@@ -1,0 +1,82 @@
+=== GameOS Log Baslangic: 2026-04-03 13:26:17.042455 ===
+
+[13:26:17.042] [     0ms] [INFO    ] [LOGGER      ] Log sistemi baslatildi
+[13:26:17.052] [     9ms] [DEBUG   ] [CONCURRENCY ] Mutex olusturuldu: 'test_mutex'
+[13:26:17.052] [    10ms] [DEBUG   ] [CONCURRENCY ] 'test_mutex' kilidi isteniyor (test)
+[13:26:17.052] [    10ms] [INFO    ] [CONCURRENCY ] 'test_mutex' kilidi alindi (test) [toplam: 1]
+[13:26:17.052] [    10ms] [INFO    ] [CONCURRENCY ] 'test_mutex' kilidi birakildi (test)
+[13:26:17.052] [    10ms] [DEBUG   ] [CONCURRENCY ] Semaphore olusturuldu: 'test_sem' (max=2)
+[13:26:17.052] [    10ms] [DEBUG   ] [CONCURRENCY ] 'test_sem' semaphore isteniyor (t1)
+[13:26:17.052] [    10ms] [INFO    ] [CONCURRENCY ] 'test_sem' semaphore alindi (t1) [kalan: 1/2]
+[13:26:17.052] [    10ms] [DEBUG   ] [CONCURRENCY ] 'test_sem' semaphore isteniyor (t2)
+[13:26:17.052] [    10ms] [INFO    ] [CONCURRENCY ] 'test_sem' semaphore alindi (t2) [kalan: 0/2]
+[13:26:17.052] [    10ms] [INFO    ] [CONCURRENCY ] 'test_sem' semaphore birakildi (t1) [kalan: 1/2]
+[13:26:17.052] [    10ms] [INFO    ] [FILESYSTEM  ] Dosya sistemi baslatildi | Max: 256 dosya, 64MB depolama
+[13:26:17.053] [    10ms] [INFO    ] [FILESYSTEM  ] Dosya olusturuldu: 'test.sav' (tip=SAVE, PID=0)
+[13:26:17.053] [    10ms] [ERROR   ] [FILESYSTEM  ] 'test.sav' zaten mevcut!
+[13:26:17.053] [    10ms] [INFO    ] [FILESYSTEM  ] Dosya sistemi baslatildi | Max: 256 dosya, 64MB depolama
+[13:26:17.053] [    10ms] [INFO    ] [FILESYSTEM  ] Dosya olusturuldu: 'test.sav' (tip=SAVE, PID=0)
+[13:26:17.053] [    10ms] [INFO    ] [FILESYSTEM  ] Dosya sistemi baslatildi | Max: 256 dosya, 64MB depolama
+[13:26:17.053] [    10ms] [INFO    ] [FILESYSTEM  ] Dosya olusturuldu: 'test.sav' (tip=SAVE, PID=0)
+[13:26:17.053] [    10ms] [INFO    ] [FILESYSTEM  ] 'test.sav' silindi | PID=0
+[13:26:17.053] [    11ms] [INFO    ] [FILESYSTEM  ] Dosya sistemi baslatildi | Max: 256 dosya, 64MB depolama
+[13:26:17.053] [    11ms] [INFO    ] [FILESYSTEM  ] Dosya olusturuldu: 'test.sav' (tip=SAVE, PID=1)
+[13:26:17.053] [    11ms] [DEBUG   ] [FILESYSTEM  ] 'test.sav' kilitlendi (PID=1)
+[13:26:17.053] [    11ms] [INFO    ] [FILESYSTEM  ] 'test.sav' yazildi | 11B | PID=1
+[13:26:17.053] [    11ms] [INFO    ] [FILESYSTEM  ] Dosya sistemi baslatildi | Max: 256 dosya, 64MB depolama
+[13:26:17.053] [    11ms] [INFO    ] [FILESYSTEM  ] Dosya olusturuldu: 'test.sav' (tip=SAVE, PID=1)
+[13:26:17.053] [    11ms] [DEBUG   ] [FILESYSTEM  ] 'test.sav' kilitlendi (PID=1)
+[13:26:17.053] [    11ms] [WARNING ] [FILESYSTEM  ] 'test.sav' kilitli (PID=1 tarafindan)! PID=99 yazamaz.
+[13:26:17.053] [    11ms] [INFO    ] [FILESYSTEM  ] Dosya sistemi baslatildi | Max: 256 dosya, 64MB depolama
+[13:26:17.053] [    11ms] [INFO    ] [FILESYSTEM  ] Dosya olusturuldu: 'test.sav' (tip=SAVE, PID=0)
+[13:26:17.053] [    11ms] [INFO    ] [FILESYSTEM  ] 'test.sav' yazildi | 11B | PID=0
+[13:26:17.053] [    11ms] [DEBUG   ] [FILESYSTEM  ] 'test.sav' okundu | 11B | PID=0
+[13:26:17.054] [    11ms] [INFO    ] [MEMORY      ] Bellek baslatildi | 262144KB (65536 frame) | Sayfa: 4KB
+[13:26:17.054] [    11ms] [INFO    ] [MEMORY      ] PID=1 icin 256 sayfa (1024KB) tahsis edildi | Bos: 65280 frame
+[13:26:17.054] [    12ms] [INFO    ] [MEMORY      ] Bellek baslatildi | 262144KB (65536 frame) | Sayfa: 4KB
+[13:26:17.054] [    12ms] [ERROR   ] [MEMORY      ] YETERSIZ BELLEK! PID=1 icin 76800 sayfa istendi, 65536 bos.
+[13:26:17.054] [    12ms] [INFO    ] [MEMORY      ] Bellek baslatildi | 262144KB (65536 frame) | Sayfa: 4KB
+[13:26:17.055] [    12ms] [INFO    ] [MEMORY      ] PID=1 icin 256 sayfa (1024KB) tahsis edildi | Bos: 65280 frame
+[13:26:17.055] [    12ms] [INFO    ] [MEMORY      ] PID=1 icin 256 sayfa serbest birakildi | Bos: 65536 frame
+[13:26:17.055] [    12ms] [INFO    ] [MEMORY      ] Bellek baslatildi | 262144KB (65536 frame) | Sayfa: 4KB
+[13:26:17.055] [    12ms] [INFO    ] [MEMORY      ] PID=1 icin 4 sayfa (16KB) tahsis edildi | Bos: 65532 frame
+[13:26:17.055] [    12ms] [DEBUG   ] [MEMORY      ] Adres cevirisi: PID=1 | Sayfa 0, Offset 0 -> Fiziksel 0
+[13:26:17.055] [    13ms] [INFO    ] [MEMORY      ] Bellek baslatildi | 262144KB (65536 frame) | Sayfa: 4KB
+[13:26:17.055] [    13ms] [ERROR   ] [MEMORY      ] PID=999 icin sayfa tablosu yok!
+[13:26:17.055] [    13ms] [INFO    ] [MEMORY      ] Bellek baslatildi | 262144KB (65536 frame) | Sayfa: 4KB
+[13:26:17.073] [    31ms] [INFO    ] [MEMORY      ] PID=1 icin 32768 sayfa (131072KB) tahsis edildi | Bos: 32768 frame
+[13:26:17.075] [    33ms] [INFO    ] [PROCESS_MGR ] Process Manager baslatildi
+[13:26:17.075] [    33ms] [INFO    ] [PROCESS_MGR ] Process olusturuldu: PID=1, Ad=TestGame, Tip=GAME, Oncelik=1, Burst=10, Bellek=1024KB
+[13:26:17.075] [    33ms] [INFO    ] [PROCESS_MGR ] PID=1 BLOCKED durumuna alindi
+[13:26:17.075] [    33ms] [INFO    ] [PROCESS_MGR ] PID=1 READY durumuna geri dondu
+[13:26:17.075] [    33ms] [INFO    ] [PROCESS_MGR ] Process Manager baslatildi
+[13:26:17.076] [    33ms] [INFO    ] [PROCESS_MGR ] Process olusturuldu: PID=1, Ad=TestGame, Tip=GAME, Oncelik=0, Burst=10, Bellek=1024KB
+[13:26:17.076] [    33ms] [INFO    ] [PROCESS_MGR ] Process Manager baslatildi
+[13:26:17.076] [    33ms] [INFO    ] [PROCESS_MGR ] Process olusturuldu: PID=1, Ad=Game1, Tip=GAME, Oncelik=1, Burst=10, Bellek=1024KB
+[13:26:17.076] [    33ms] [INFO    ] [PROCESS_MGR ] Process olusturuldu: PID=2, Ad=Game2, Tip=GAME, Oncelik=1, Burst=10, Bellek=1024KB
+[13:26:17.076] [    33ms] [INFO    ] [PROCESS_MGR ] Process Manager baslatildi
+[13:26:17.076] [    33ms] [ERROR   ] [PROCESS_MGR ] PID=999 bulunamadi!
+[13:26:17.076] [    33ms] [INFO    ] [PROCESS_MGR ] Process Manager baslatildi
+[13:26:17.076] [    33ms] [INFO    ] [PROCESS_MGR ] Process olusturuldu: PID=1, Ad=TestGame, Tip=GAME, Oncelik=1, Burst=10, Bellek=1024KB
+[13:26:17.076] [    33ms] [INFO    ] [PROCESS_MGR ] Process sonlandirildi: PID=1, Ad=TestGame
+[13:26:17.076] [    34ms] [INFO    ] [SCHEDULER   ] Round Robin Scheduler baslatildi | Quantum=3
+[13:26:17.076] [    34ms] [INFO    ] [SCHEDULER   ] Priority RR Scheduler baslatildi (gelismis)
+[13:26:17.076] [    34ms] [DEBUG   ] [SCHEDULER   ] PID=1 (Game) kuyruga eklendi
+[13:26:17.076] [    34ms] [DEBUG   ] [SCHEDULER   ] PID=2 (Save) kuyruga eklendi
+[13:26:17.076] [    34ms] [INFO    ] [SCHEDULER   ] === Priority RR Scheduling BASLADI ===
+[13:26:17.076] [    34ms] [INFO    ] [SCHEDULER   ] [T=  0] PID=1 (Game) [P0] | 3 birim
+[13:26:17.076] [    34ms] [INFO    ] [SCHEDULER   ] [T=  3] PID=1 (Game) [P0] | 3 birim
+[13:26:17.076] [    34ms] [INFO    ] [SCHEDULER   ] [T=  6] PID=1 TAMAMLANDI
+[13:26:17.076] [    34ms] [INFO    ] [SCHEDULER   ] [T=  6] PID=2 (Save) [P3] | 3 birim
+[13:26:17.076] [    34ms] [INFO    ] [SCHEDULER   ] [T=  9] PID=2 TAMAMLANDI
+[13:26:17.076] [    34ms] [INFO    ] [SCHEDULER   ] === Priority RR Scheduling TAMAMLANDI ===
+[13:26:17.076] [    34ms] [INFO    ] [SCHEDULER   ] Round Robin Scheduler baslatildi | Quantum=3
+[13:26:17.076] [    34ms] [DEBUG   ] [SCHEDULER   ] PID=1 (Game) kuyruga eklendi
+[13:26:17.076] [    34ms] [DEBUG   ] [SCHEDULER   ] PID=2 (Audio) kuyruga eklendi
+[13:26:17.076] [    34ms] [INFO    ] [SCHEDULER   ] === Round Robin Scheduling BASLADI ===
+[13:26:17.076] [    34ms] [INFO    ] [SCHEDULER   ] [T=  0] PID=1 (Game) calistiriliyor | 3 birim | Kalan: 6 -> 3
+[13:26:17.076] [    34ms] [INFO    ] [SCHEDULER   ] [T=  3] PID=2 (Audio) calistiriliyor | 3 birim | Kalan: 3 -> 0
+[13:26:17.076] [    34ms] [INFO    ] [SCHEDULER   ] [T=  6] PID=2 (Audio) TAMAMLANDI | TA=6 | Wait=3
+[13:26:17.076] [    34ms] [INFO    ] [SCHEDULER   ] [T=  6] PID=1 (Game) calistiriliyor | 3 birim | Kalan: 3 -> 0
+[13:26:17.076] [    34ms] [INFO    ] [SCHEDULER   ] [T=  9] PID=1 (Game) TAMAMLANDI | TA=9 | Wait=3
+[13:26:17.076] [    34ms] [INFO    ] [SCHEDULER   ] === Round Robin Scheduling TAMAMLANDI ===
