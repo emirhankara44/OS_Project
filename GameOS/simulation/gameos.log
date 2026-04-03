@@ -1,177 +1,135 @@
-=== GameOS Log Baslangic: 2026-04-03 13:30:28.742052 ===
+=== GameOS Log Baslangic: 2026-04-03 17:59:17.505487 ===
 
-[13:30:28.742] [     0ms] [INFO    ] [LOGGER      ] Log sistemi baslatildi
-[13:30:41.109] [ 12367ms] [INFO    ] [MAIN        ] === PROCESS YONETIMI & SCHEDULER DEMO ===
-[13:30:41.109] [ 12367ms] [INFO    ] [PROCESS_MGR ] Process Manager baslatildi
-[13:30:41.109] [ 12368ms] [INFO    ] [PROCESS_MGR ] Process olusturuldu: PID=1, Ad=SuperMario, Tip=GAME, Oncelik=0, Burst=12, Bellek=65536KB
-[13:30:41.110] [ 12368ms] [INFO    ] [PROCESS_MGR ] Process olusturuldu: PID=2, Ad=AudioEngine, Tip=AUDIO, Oncelik=1, Burst=6, Bellek=16384KB
-[13:30:41.110] [ 12368ms] [INFO    ] [PROCESS_MGR ] Process olusturuldu: PID=3, Ad=OnlineService, Tip=NETWORK, Oncelik=2, Burst=8, Bellek=8192KB
-[13:30:41.110] [ 12368ms] [INFO    ] [PROCESS_MGR ] Process olusturuldu: PID=4, Ad=GameUI, Tip=UI, Oncelik=1, Burst=4, Bellek=32768KB
-[13:30:41.110] [ 12368ms] [INFO    ] [PROCESS_MGR ] Process olusturuldu: PID=5, Ad=AutoSave, Tip=SAVE, Oncelik=3, Burst=3, Bellek=4096KB
-[13:30:41.110] [ 12368ms] [INFO    ] [SCHEDULER   ] Round Robin Scheduler baslatildi | Quantum=3
-[13:30:41.110] [ 12368ms] [DEBUG   ] [SCHEDULER   ] PID=1 (SuperMario) kuyruga eklendi
-[13:30:41.110] [ 12368ms] [DEBUG   ] [SCHEDULER   ] PID=2 (AudioEngine) kuyruga eklendi
-[13:30:41.110] [ 12368ms] [DEBUG   ] [SCHEDULER   ] PID=3 (OnlineService) kuyruga eklendi
-[13:30:41.110] [ 12368ms] [DEBUG   ] [SCHEDULER   ] PID=4 (GameUI) kuyruga eklendi
-[13:30:41.110] [ 12368ms] [DEBUG   ] [SCHEDULER   ] PID=5 (AutoSave) kuyruga eklendi
-[13:30:41.110] [ 12368ms] [INFO    ] [SCHEDULER   ] === Round Robin Scheduling BASLADI ===
-[13:30:41.110] [ 12368ms] [INFO    ] [SCHEDULER   ] [T=  0] PID=1 (SuperMario) calistiriliyor | 3 birim | Kalan: 12 -> 9
-[13:30:41.110] [ 12368ms] [INFO    ] [SCHEDULER   ] [T=  3] PID=2 (AudioEngine) calistiriliyor | 3 birim | Kalan: 6 -> 3
-[13:30:41.110] [ 12368ms] [INFO    ] [SCHEDULER   ] [T=  6] PID=3 (OnlineService) calistiriliyor | 3 birim | Kalan: 8 -> 5
-[13:30:41.110] [ 12368ms] [INFO    ] [SCHEDULER   ] [T=  9] PID=4 (GameUI) calistiriliyor | 3 birim | Kalan: 4 -> 1
-[13:30:41.110] [ 12369ms] [INFO    ] [SCHEDULER   ] [T= 12] PID=5 (AutoSave) calistiriliyor | 3 birim | Kalan: 3 -> 0
-[13:30:41.110] [ 12369ms] [INFO    ] [SCHEDULER   ] [T= 15] PID=5 (AutoSave) TAMAMLANDI | TA=15 | Wait=12
-[13:30:41.111] [ 12369ms] [INFO    ] [SCHEDULER   ] [T= 15] PID=1 (SuperMario) calistiriliyor | 3 birim | Kalan: 9 -> 6
-[13:30:41.111] [ 12369ms] [INFO    ] [SCHEDULER   ] [T= 18] PID=2 (AudioEngine) calistiriliyor | 3 birim | Kalan: 3 -> 0
-[13:30:41.111] [ 12369ms] [INFO    ] [SCHEDULER   ] [T= 21] PID=2 (AudioEngine) TAMAMLANDI | TA=21 | Wait=15
-[13:30:41.111] [ 12369ms] [INFO    ] [SCHEDULER   ] [T= 21] PID=3 (OnlineService) calistiriliyor | 3 birim | Kalan: 5 -> 2
-[13:30:41.111] [ 12369ms] [INFO    ] [SCHEDULER   ] [T= 24] PID=4 (GameUI) calistiriliyor | 1 birim | Kalan: 1 -> 0
-[13:30:41.111] [ 12369ms] [INFO    ] [SCHEDULER   ] [T= 25] PID=4 (GameUI) TAMAMLANDI | TA=25 | Wait=21
-[13:30:41.111] [ 12369ms] [INFO    ] [SCHEDULER   ] [T= 25] PID=1 (SuperMario) calistiriliyor | 3 birim | Kalan: 6 -> 3
-[13:30:41.111] [ 12369ms] [INFO    ] [SCHEDULER   ] [T= 28] PID=3 (OnlineService) calistiriliyor | 2 birim | Kalan: 2 -> 0
-[13:30:41.111] [ 12369ms] [INFO    ] [SCHEDULER   ] [T= 30] PID=3 (OnlineService) TAMAMLANDI | TA=30 | Wait=22
-[13:30:41.111] [ 12369ms] [INFO    ] [SCHEDULER   ] [T= 30] PID=1 (SuperMario) calistiriliyor | 3 birim | Kalan: 3 -> 0
-[13:30:41.111] [ 12369ms] [INFO    ] [SCHEDULER   ] [T= 33] PID=1 (SuperMario) TAMAMLANDI | TA=33 | Wait=21
-[13:30:41.111] [ 12369ms] [INFO    ] [SCHEDULER   ] === Round Robin Scheduling TAMAMLANDI ===
-[13:30:41.111] [ 12369ms] [INFO    ] [SCHEDULER   ] Round Robin Scheduler baslatildi | Quantum=3
-[13:30:41.111] [ 12369ms] [INFO    ] [SCHEDULER   ] Priority RR Scheduler baslatildi (gelismis)
-[13:30:41.111] [ 12370ms] [DEBUG   ] [SCHEDULER   ] PID=1 (SuperMario) kuyruga eklendi
-[13:30:41.111] [ 12370ms] [DEBUG   ] [SCHEDULER   ] PID=2 (AudioEngine) kuyruga eklendi
-[13:30:41.112] [ 12370ms] [DEBUG   ] [SCHEDULER   ] PID=3 (OnlineService) kuyruga eklendi
-[13:30:41.112] [ 12370ms] [DEBUG   ] [SCHEDULER   ] PID=4 (GameUI) kuyruga eklendi
-[13:30:41.112] [ 12370ms] [DEBUG   ] [SCHEDULER   ] PID=5 (AutoSave) kuyruga eklendi
-[13:30:41.112] [ 12370ms] [INFO    ] [SCHEDULER   ] === Priority RR Scheduling BASLADI ===
-[13:30:41.112] [ 12370ms] [INFO    ] [SCHEDULER   ] [T=  0] PID=1 (SuperMario) [P0] | 3 birim
-[13:30:41.112] [ 12370ms] [INFO    ] [SCHEDULER   ] [T=  3] PID=1 (SuperMario) [P0] | 3 birim
-[13:30:41.112] [ 12370ms] [INFO    ] [SCHEDULER   ] [T=  6] PID=1 (SuperMario) [P0] | 3 birim
-[13:30:41.112] [ 12370ms] [INFO    ] [SCHEDULER   ] [T=  9] PID=1 (SuperMario) [P0] | 3 birim
-[13:30:41.112] [ 12370ms] [INFO    ] [SCHEDULER   ] [T= 12] PID=1 TAMAMLANDI
-[13:30:41.112] [ 12370ms] [INFO    ] [SCHEDULER   ] [T= 12] PID=2 (AudioEngine) [P1] | 3 birim
-[13:30:41.112] [ 12370ms] [INFO    ] [SCHEDULER   ] [T= 15] PID=4 (GameUI) [P1] | 3 birim
-[13:30:41.112] [ 12370ms] [INFO    ] [SCHEDULER   ] [T= 18] PID=2 (AudioEngine) [P1] | 3 birim
-[13:30:41.112] [ 12370ms] [INFO    ] [SCHEDULER   ] [T= 21] PID=2 TAMAMLANDI
-[13:30:41.112] [ 12370ms] [INFO    ] [SCHEDULER   ] [T= 21] PID=4 (GameUI) [P1] | 1 birim
-[13:30:41.112] [ 12370ms] [INFO    ] [SCHEDULER   ] [T= 22] PID=4 TAMAMLANDI
-[13:30:41.112] [ 12370ms] [INFO    ] [SCHEDULER   ] [T= 22] PID=3 (OnlineService) [P2] | 3 birim
-[13:30:41.112] [ 12370ms] [INFO    ] [SCHEDULER   ] [T= 25] PID=3 (OnlineService) [P2] | 3 birim
-[13:30:41.112] [ 12370ms] [INFO    ] [SCHEDULER   ] [T= 28] PID=3 (OnlineService) [P2] | 2 birim
-[13:30:41.112] [ 12370ms] [INFO    ] [SCHEDULER   ] [T= 30] PID=3 TAMAMLANDI
-[13:30:41.112] [ 12370ms] [INFO    ] [SCHEDULER   ] [T= 30] PID=5 (AutoSave) [P3] | 3 birim
-[13:30:41.112] [ 12370ms] [INFO    ] [SCHEDULER   ] [T= 33] PID=5 TAMAMLANDI
-[13:30:41.112] [ 12370ms] [INFO    ] [SCHEDULER   ] === Priority RR Scheduling TAMAMLANDI ===
-[13:31:41.675] [ 72933ms] [INFO    ] [MAIN        ] === PROCESS YONETIMI & SCHEDULER DEMO ===
-[13:31:41.675] [ 72933ms] [INFO    ] [PROCESS_MGR ] Process Manager baslatildi
-[13:31:41.675] [ 72934ms] [INFO    ] [PROCESS_MGR ] Process olusturuldu: PID=1, Ad=SuperMario, Tip=GAME, Oncelik=0, Burst=12, Bellek=65536KB
-[13:31:41.676] [ 72934ms] [INFO    ] [PROCESS_MGR ] Process olusturuldu: PID=2, Ad=AudioEngine, Tip=AUDIO, Oncelik=1, Burst=6, Bellek=16384KB
-[13:31:41.676] [ 72934ms] [INFO    ] [PROCESS_MGR ] Process olusturuldu: PID=3, Ad=OnlineService, Tip=NETWORK, Oncelik=2, Burst=8, Bellek=8192KB
-[13:31:41.676] [ 72934ms] [INFO    ] [PROCESS_MGR ] Process olusturuldu: PID=4, Ad=GameUI, Tip=UI, Oncelik=1, Burst=4, Bellek=32768KB
-[13:31:41.676] [ 72934ms] [INFO    ] [PROCESS_MGR ] Process olusturuldu: PID=5, Ad=AutoSave, Tip=SAVE, Oncelik=3, Burst=3, Bellek=4096KB
-[13:31:41.676] [ 72934ms] [INFO    ] [SCHEDULER   ] Round Robin Scheduler baslatildi | Quantum=3
-[13:31:41.676] [ 72934ms] [DEBUG   ] [SCHEDULER   ] PID=1 (SuperMario) kuyruga eklendi
-[13:31:41.676] [ 72934ms] [DEBUG   ] [SCHEDULER   ] PID=2 (AudioEngine) kuyruga eklendi
-[13:31:41.676] [ 72934ms] [DEBUG   ] [SCHEDULER   ] PID=3 (OnlineService) kuyruga eklendi
-[13:31:41.676] [ 72934ms] [DEBUG   ] [SCHEDULER   ] PID=4 (GameUI) kuyruga eklendi
-[13:31:41.676] [ 72934ms] [DEBUG   ] [SCHEDULER   ] PID=5 (AutoSave) kuyruga eklendi
-[13:31:41.676] [ 72934ms] [INFO    ] [SCHEDULER   ] === Round Robin Scheduling BASLADI ===
-[13:31:41.676] [ 72934ms] [INFO    ] [SCHEDULER   ] [T=  0] PID=1 (SuperMario) calistiriliyor | 3 birim | Kalan: 12 -> 9
-[13:31:41.676] [ 72934ms] [INFO    ] [SCHEDULER   ] [T=  3] PID=2 (AudioEngine) calistiriliyor | 3 birim | Kalan: 6 -> 3
-[13:31:41.676] [ 72934ms] [INFO    ] [SCHEDULER   ] [T=  6] PID=3 (OnlineService) calistiriliyor | 3 birim | Kalan: 8 -> 5
-[13:31:41.676] [ 72935ms] [INFO    ] [SCHEDULER   ] [T=  9] PID=4 (GameUI) calistiriliyor | 3 birim | Kalan: 4 -> 1
-[13:31:41.676] [ 72935ms] [INFO    ] [SCHEDULER   ] [T= 12] PID=5 (AutoSave) calistiriliyor | 3 birim | Kalan: 3 -> 0
-[13:31:41.677] [ 72935ms] [INFO    ] [SCHEDULER   ] [T= 15] PID=5 (AutoSave) TAMAMLANDI | TA=15 | Wait=12
-[13:31:41.677] [ 72935ms] [INFO    ] [SCHEDULER   ] [T= 15] PID=1 (SuperMario) calistiriliyor | 3 birim | Kalan: 9 -> 6
-[13:31:41.677] [ 72935ms] [INFO    ] [SCHEDULER   ] [T= 18] PID=2 (AudioEngine) calistiriliyor | 3 birim | Kalan: 3 -> 0
-[13:31:41.677] [ 72935ms] [INFO    ] [SCHEDULER   ] [T= 21] PID=2 (AudioEngine) TAMAMLANDI | TA=21 | Wait=15
-[13:31:41.677] [ 72935ms] [INFO    ] [SCHEDULER   ] [T= 21] PID=3 (OnlineService) calistiriliyor | 3 birim | Kalan: 5 -> 2
-[13:31:41.677] [ 72935ms] [INFO    ] [SCHEDULER   ] [T= 24] PID=4 (GameUI) calistiriliyor | 1 birim | Kalan: 1 -> 0
-[13:31:41.677] [ 72935ms] [INFO    ] [SCHEDULER   ] [T= 25] PID=4 (GameUI) TAMAMLANDI | TA=25 | Wait=21
-[13:31:41.677] [ 72935ms] [INFO    ] [SCHEDULER   ] [T= 25] PID=1 (SuperMario) calistiriliyor | 3 birim | Kalan: 6 -> 3
-[13:31:41.677] [ 72935ms] [INFO    ] [SCHEDULER   ] [T= 28] PID=3 (OnlineService) calistiriliyor | 2 birim | Kalan: 2 -> 0
-[13:31:41.677] [ 72935ms] [INFO    ] [SCHEDULER   ] [T= 30] PID=3 (OnlineService) TAMAMLANDI | TA=30 | Wait=22
-[13:31:41.677] [ 72935ms] [INFO    ] [SCHEDULER   ] [T= 30] PID=1 (SuperMario) calistiriliyor | 3 birim | Kalan: 3 -> 0
-[13:31:41.677] [ 72935ms] [INFO    ] [SCHEDULER   ] [T= 33] PID=1 (SuperMario) TAMAMLANDI | TA=33 | Wait=21
-[13:31:41.677] [ 72935ms] [INFO    ] [SCHEDULER   ] === Round Robin Scheduling TAMAMLANDI ===
-[13:31:41.677] [ 72936ms] [INFO    ] [SCHEDULER   ] Round Robin Scheduler baslatildi | Quantum=3
-[13:31:41.677] [ 72936ms] [INFO    ] [SCHEDULER   ] Priority RR Scheduler baslatildi (gelismis)
-[13:31:41.678] [ 72936ms] [DEBUG   ] [SCHEDULER   ] PID=1 (SuperMario) kuyruga eklendi
-[13:31:41.678] [ 72936ms] [DEBUG   ] [SCHEDULER   ] PID=2 (AudioEngine) kuyruga eklendi
-[13:31:41.678] [ 72936ms] [DEBUG   ] [SCHEDULER   ] PID=3 (OnlineService) kuyruga eklendi
-[13:31:41.678] [ 72936ms] [DEBUG   ] [SCHEDULER   ] PID=4 (GameUI) kuyruga eklendi
-[13:31:41.678] [ 72936ms] [DEBUG   ] [SCHEDULER   ] PID=5 (AutoSave) kuyruga eklendi
-[13:31:41.678] [ 72936ms] [INFO    ] [SCHEDULER   ] === Priority RR Scheduling BASLADI ===
-[13:31:41.678] [ 72936ms] [INFO    ] [SCHEDULER   ] [T=  0] PID=1 (SuperMario) [P0] | 3 birim
-[13:31:41.678] [ 72936ms] [INFO    ] [SCHEDULER   ] [T=  3] PID=1 (SuperMario) [P0] | 3 birim
-[13:31:41.678] [ 72936ms] [INFO    ] [SCHEDULER   ] [T=  6] PID=1 (SuperMario) [P0] | 3 birim
-[13:31:41.678] [ 72936ms] [INFO    ] [SCHEDULER   ] [T=  9] PID=1 (SuperMario) [P0] | 3 birim
-[13:31:41.678] [ 72936ms] [INFO    ] [SCHEDULER   ] [T= 12] PID=1 TAMAMLANDI
-[13:31:41.678] [ 72936ms] [INFO    ] [SCHEDULER   ] [T= 12] PID=2 (AudioEngine) [P1] | 3 birim
-[13:31:41.678] [ 72936ms] [INFO    ] [SCHEDULER   ] [T= 15] PID=4 (GameUI) [P1] | 3 birim
-[13:31:41.678] [ 72936ms] [INFO    ] [SCHEDULER   ] [T= 18] PID=2 (AudioEngine) [P1] | 3 birim
-[13:31:41.678] [ 72936ms] [INFO    ] [SCHEDULER   ] [T= 21] PID=2 TAMAMLANDI
-[13:31:41.678] [ 72936ms] [INFO    ] [SCHEDULER   ] [T= 21] PID=4 (GameUI) [P1] | 1 birim
-[13:31:41.678] [ 72936ms] [INFO    ] [SCHEDULER   ] [T= 22] PID=4 TAMAMLANDI
-[13:31:41.678] [ 72936ms] [INFO    ] [SCHEDULER   ] [T= 22] PID=3 (OnlineService) [P2] | 3 birim
-[13:31:41.678] [ 72936ms] [INFO    ] [SCHEDULER   ] [T= 25] PID=3 (OnlineService) [P2] | 3 birim
-[13:31:41.678] [ 72936ms] [INFO    ] [SCHEDULER   ] [T= 28] PID=3 (OnlineService) [P2] | 2 birim
-[13:31:41.678] [ 72937ms] [INFO    ] [SCHEDULER   ] [T= 30] PID=3 TAMAMLANDI
-[13:31:41.678] [ 72937ms] [INFO    ] [SCHEDULER   ] [T= 30] PID=5 (AutoSave) [P3] | 3 birim
-[13:31:41.679] [ 72937ms] [INFO    ] [SCHEDULER   ] [T= 33] PID=5 TAMAMLANDI
-[13:31:41.679] [ 72937ms] [INFO    ] [SCHEDULER   ] === Priority RR Scheduling TAMAMLANDI ===
-[13:31:45.892] [ 77150ms] [INFO    ] [MAIN        ] === PROCESS YONETIMI & SCHEDULER DEMO ===
-[13:31:45.892] [ 77150ms] [INFO    ] [PROCESS_MGR ] Process Manager baslatildi
-[13:31:45.892] [ 77150ms] [INFO    ] [PROCESS_MGR ] Process olusturuldu: PID=1, Ad=SuperMario, Tip=GAME, Oncelik=0, Burst=12, Bellek=65536KB
-[13:31:45.892] [ 77150ms] [INFO    ] [PROCESS_MGR ] Process olusturuldu: PID=2, Ad=AudioEngine, Tip=AUDIO, Oncelik=1, Burst=6, Bellek=16384KB
-[13:31:45.892] [ 77150ms] [INFO    ] [PROCESS_MGR ] Process olusturuldu: PID=3, Ad=OnlineService, Tip=NETWORK, Oncelik=2, Burst=8, Bellek=8192KB
-[13:31:45.892] [ 77150ms] [INFO    ] [PROCESS_MGR ] Process olusturuldu: PID=4, Ad=GameUI, Tip=UI, Oncelik=1, Burst=4, Bellek=32768KB
-[13:31:45.892] [ 77151ms] [INFO    ] [PROCESS_MGR ] Process olusturuldu: PID=5, Ad=AutoSave, Tip=SAVE, Oncelik=3, Burst=3, Bellek=4096KB
-[13:31:45.893] [ 77151ms] [INFO    ] [SCHEDULER   ] Round Robin Scheduler baslatildi | Quantum=3
-[13:31:45.893] [ 77151ms] [DEBUG   ] [SCHEDULER   ] PID=1 (SuperMario) kuyruga eklendi
-[13:31:45.893] [ 77151ms] [DEBUG   ] [SCHEDULER   ] PID=2 (AudioEngine) kuyruga eklendi
-[13:31:45.893] [ 77151ms] [DEBUG   ] [SCHEDULER   ] PID=3 (OnlineService) kuyruga eklendi
-[13:31:45.893] [ 77151ms] [DEBUG   ] [SCHEDULER   ] PID=4 (GameUI) kuyruga eklendi
-[13:31:45.893] [ 77151ms] [DEBUG   ] [SCHEDULER   ] PID=5 (AutoSave) kuyruga eklendi
-[13:31:45.893] [ 77151ms] [INFO    ] [SCHEDULER   ] === Round Robin Scheduling BASLADI ===
-[13:31:45.893] [ 77151ms] [INFO    ] [SCHEDULER   ] [T=  0] PID=1 (SuperMario) calistiriliyor | 3 birim | Kalan: 12 -> 9
-[13:31:45.893] [ 77151ms] [INFO    ] [SCHEDULER   ] [T=  3] PID=2 (AudioEngine) calistiriliyor | 3 birim | Kalan: 6 -> 3
-[13:31:45.893] [ 77151ms] [INFO    ] [SCHEDULER   ] [T=  6] PID=3 (OnlineService) calistiriliyor | 3 birim | Kalan: 8 -> 5
-[13:31:45.893] [ 77151ms] [INFO    ] [SCHEDULER   ] [T=  9] PID=4 (GameUI) calistiriliyor | 3 birim | Kalan: 4 -> 1
-[13:31:45.893] [ 77151ms] [INFO    ] [SCHEDULER   ] [T= 12] PID=5 (AutoSave) calistiriliyor | 3 birim | Kalan: 3 -> 0
-[13:31:45.893] [ 77151ms] [INFO    ] [SCHEDULER   ] [T= 15] PID=5 (AutoSave) TAMAMLANDI | TA=15 | Wait=12
-[13:31:45.893] [ 77151ms] [INFO    ] [SCHEDULER   ] [T= 15] PID=1 (SuperMario) calistiriliyor | 3 birim | Kalan: 9 -> 6
-[13:31:45.893] [ 77152ms] [INFO    ] [SCHEDULER   ] [T= 18] PID=2 (AudioEngine) calistiriliyor | 3 birim | Kalan: 3 -> 0
-[13:31:45.893] [ 77152ms] [INFO    ] [SCHEDULER   ] [T= 21] PID=2 (AudioEngine) TAMAMLANDI | TA=21 | Wait=15
-[13:31:45.894] [ 77152ms] [INFO    ] [SCHEDULER   ] [T= 21] PID=3 (OnlineService) calistiriliyor | 3 birim | Kalan: 5 -> 2
-[13:31:45.894] [ 77152ms] [INFO    ] [SCHEDULER   ] [T= 24] PID=4 (GameUI) calistiriliyor | 1 birim | Kalan: 1 -> 0
-[13:31:45.894] [ 77152ms] [INFO    ] [SCHEDULER   ] [T= 25] PID=4 (GameUI) TAMAMLANDI | TA=25 | Wait=21
-[13:31:45.894] [ 77152ms] [INFO    ] [SCHEDULER   ] [T= 25] PID=1 (SuperMario) calistiriliyor | 3 birim | Kalan: 6 -> 3
-[13:31:45.894] [ 77152ms] [INFO    ] [SCHEDULER   ] [T= 28] PID=3 (OnlineService) calistiriliyor | 2 birim | Kalan: 2 -> 0
-[13:31:45.894] [ 77152ms] [INFO    ] [SCHEDULER   ] [T= 30] PID=3 (OnlineService) TAMAMLANDI | TA=30 | Wait=22
-[13:31:45.894] [ 77152ms] [INFO    ] [SCHEDULER   ] [T= 30] PID=1 (SuperMario) calistiriliyor | 3 birim | Kalan: 3 -> 0
-[13:31:45.894] [ 77152ms] [INFO    ] [SCHEDULER   ] [T= 33] PID=1 (SuperMario) TAMAMLANDI | TA=33 | Wait=21
-[13:31:45.894] [ 77152ms] [INFO    ] [SCHEDULER   ] === Round Robin Scheduling TAMAMLANDI ===
-[13:31:45.894] [ 77152ms] [INFO    ] [SCHEDULER   ] Round Robin Scheduler baslatildi | Quantum=3
-[13:31:45.894] [ 77152ms] [INFO    ] [SCHEDULER   ] Priority RR Scheduler baslatildi (gelismis)
-[13:31:45.894] [ 77152ms] [DEBUG   ] [SCHEDULER   ] PID=1 (SuperMario) kuyruga eklendi
-[13:31:45.895] [ 77153ms] [DEBUG   ] [SCHEDULER   ] PID=2 (AudioEngine) kuyruga eklendi
-[13:31:45.895] [ 77153ms] [DEBUG   ] [SCHEDULER   ] PID=3 (OnlineService) kuyruga eklendi
-[13:31:45.895] [ 77153ms] [DEBUG   ] [SCHEDULER   ] PID=4 (GameUI) kuyruga eklendi
-[13:31:45.895] [ 77153ms] [DEBUG   ] [SCHEDULER   ] PID=5 (AutoSave) kuyruga eklendi
-[13:31:45.895] [ 77153ms] [INFO    ] [SCHEDULER   ] === Priority RR Scheduling BASLADI ===
-[13:31:45.895] [ 77153ms] [INFO    ] [SCHEDULER   ] [T=  0] PID=1 (SuperMario) [P0] | 3 birim
-[13:31:45.895] [ 77153ms] [INFO    ] [SCHEDULER   ] [T=  3] PID=1 (SuperMario) [P0] | 3 birim
-[13:31:45.895] [ 77153ms] [INFO    ] [SCHEDULER   ] [T=  6] PID=1 (SuperMario) [P0] | 3 birim
-[13:31:45.895] [ 77153ms] [INFO    ] [SCHEDULER   ] [T=  9] PID=1 (SuperMario) [P0] | 3 birim
-[13:31:45.895] [ 77153ms] [INFO    ] [SCHEDULER   ] [T= 12] PID=1 TAMAMLANDI
-[13:31:45.895] [ 77153ms] [INFO    ] [SCHEDULER   ] [T= 12] PID=2 (AudioEngine) [P1] | 3 birim
-[13:31:45.895] [ 77153ms] [INFO    ] [SCHEDULER   ] [T= 15] PID=4 (GameUI) [P1] | 3 birim
-[13:31:45.895] [ 77153ms] [INFO    ] [SCHEDULER   ] [T= 18] PID=2 (AudioEngine) [P1] | 3 birim
-[13:31:45.895] [ 77153ms] [INFO    ] [SCHEDULER   ] [T= 21] PID=2 TAMAMLANDI
-[13:31:45.895] [ 77153ms] [INFO    ] [SCHEDULER   ] [T= 21] PID=4 (GameUI) [P1] | 1 birim
-[13:31:45.895] [ 77153ms] [INFO    ] [SCHEDULER   ] [T= 22] PID=4 TAMAMLANDI
-[13:31:45.895] [ 77153ms] [INFO    ] [SCHEDULER   ] [T= 22] PID=3 (OnlineService) [P2] | 3 birim
-[13:31:45.895] [ 77154ms] [INFO    ] [SCHEDULER   ] [T= 25] PID=3 (OnlineService) [P2] | 3 birim
-[13:31:45.895] [ 77154ms] [INFO    ] [SCHEDULER   ] [T= 28] PID=3 (OnlineService) [P2] | 2 birim
-[13:31:45.896] [ 77154ms] [INFO    ] [SCHEDULER   ] [T= 30] PID=3 TAMAMLANDI
-[13:31:45.896] [ 77154ms] [INFO    ] [SCHEDULER   ] [T= 30] PID=5 (AutoSave) [P3] | 3 birim
-[13:31:45.896] [ 77154ms] [INFO    ] [SCHEDULER   ] [T= 33] PID=5 TAMAMLANDI
-[13:31:45.896] [ 77154ms] [INFO    ] [SCHEDULER   ] === Priority RR Scheduling TAMAMLANDI ===
+[17:59:17.505] [     0ms] [INFO    ] [LOGGER      ] Log sistemi baslatildi
+[17:59:33.186] [ 15681ms] [INFO    ] [MAIN        ] === CROSS-COMPONENT: I/O BLOCKING DEMO ===
+[17:59:33.187] [ 15682ms] [INFO    ] [PROCESS_MGR ] Process Manager baslatildi
+[17:59:33.188] [ 15683ms] [INFO    ] [MEMORY      ] Bellek baslatildi | 262144KB (65536 frame) | Sayfa: 4KB
+[17:59:33.189] [ 15683ms] [INFO    ] [FILESYSTEM  ] Dosya sistemi baslatildi | Max: 256 dosya, 64MB depolama
+[17:59:33.189] [ 15684ms] [INFO    ] [PROCESS_MGR ] Process olusturuldu: PID=1, Ad=SuperMario, Tip=GAME, Oncelik=0, Burst=10, Bellek=16384KB
+[17:59:33.190] [ 15684ms] [INFO    ] [PROCESS_MGR ] Process olusturuldu: PID=2, Ad=AudioEngine, Tip=AUDIO, Oncelik=1, Burst=6, Bellek=4096KB
+[17:59:33.190] [ 15685ms] [INFO    ] [PROCESS_MGR ] Process olusturuldu: PID=3, Ad=AutoSave, Tip=SAVE, Oncelik=2, Burst=4, Bellek=2048KB
+[17:59:33.193] [ 15688ms] [INFO    ] [MEMORY      ] PID=1 icin 4096 sayfa (16384KB) tahsis edildi | Bos: 61440 frame
+[17:59:33.195] [ 15689ms] [INFO    ] [MEMORY      ] PID=2 icin 1024 sayfa (4096KB) tahsis edildi | Bos: 60416 frame
+[17:59:33.195] [ 15690ms] [INFO    ] [MEMORY      ] PID=3 icin 512 sayfa (2048KB) tahsis edildi | Bos: 59904 frame
+[17:59:33.195] [ 15690ms] [INFO    ] [FILESYSTEM  ] Dosya olusturuldu: 'mario_save.sav' (tip=SAVE, PID=1)
+[17:59:33.196] [ 15690ms] [INFO    ] [SCHEDULER   ] Simulasyon basladi | 3 process | Quantum=3
+[17:59:33.196] [ 15690ms] [INFO    ] [SCHEDULER   ] [T=  0] PID=1 (SuperMario) calistiriliyor | 3 birim | Kalan: 10 -> 7
+[17:59:33.196] [ 15690ms] [INFO    ] [SCHEDULER   ] [T=  3] PID=2 (AudioEngine) calistiriliyor | 3 birim | Kalan: 6 -> 3
+[17:59:33.196] [ 15690ms] [INFO    ] [SCHEDULER   ] [T=  6] PID=3 (AutoSave) calistiriliyor | 3 birim | Kalan: 4 -> 1
+[17:59:33.196] [ 15691ms] [WARNING ] [SCHEDULER   ] [T=  9] PID=1 (SuperMario) I/O TALEP ETTI (save dosyasi yazilacak)
+[17:59:33.196] [ 15691ms] [INFO    ] [PROCESS_MGR ] PID=1 BLOCKED durumuna alindi
+[17:59:33.196] [ 15691ms] [INFO    ] [SCHEDULER   ] [T=  9] PID=1 BLOCKED -> ready queue'dan cikarildi
+[17:59:33.196] [ 15691ms] [INFO    ] [MEMORY      ] [T=  9] PID=1 sayfalari bellekte KORUNUYOR (swap yok)
+[17:59:33.196] [ 15691ms] [INFO    ] [FILESYSTEM  ] 'mario_save.sav' yazildi | 38B | PID=1
+[17:59:33.197] [ 15691ms] [INFO    ] [FILESYSTEM  ] [T=  9] mario_save.sav yazma tamamlandi (PID=1)
+[17:59:33.197] [ 15691ms] [INFO    ] [SCHEDULER   ] [T=  9] I/O bekleniyor... T=13'de tamamlanacak
+[17:59:33.197] [ 15691ms] [INFO    ] [SCHEDULER   ] [T= 10] PID=2 (AudioEngine) calistiriliyor | 3 birim | Kalan: 3 -> 0
+[17:59:33.197] [ 15692ms] [INFO    ] [PROCESS_MGR ] Process sonlandirildi: PID=2, Ad=AudioEngine
+[17:59:33.198] [ 15692ms] [INFO    ] [MEMORY      ] PID=2 icin 1024 sayfa serbest birakildi | Bos: 60928 frame
+[17:59:33.198] [ 15693ms] [INFO    ] [SCHEDULER   ] [T= 13] PID=2 (AudioEngine) TAMAMLANDI | TA=13 | Bekleme=6
+[17:59:33.198] [ 15693ms] [INFO    ] [PROCESS_MGR ] PID=1 READY durumuna geri dondu
+[17:59:33.198] [ 15693ms] [INFO    ] [SCHEDULER   ] [T= 13] PID=1 (SuperMario) I/O TAMAMLANDI -> READY, kuyruga geri eklendi
+[17:59:33.198] [ 15693ms] [INFO    ] [SCHEDULER   ] [T= 13] PID=3 (AutoSave) calistiriliyor | 1 birim | Kalan: 1 -> 0
+[17:59:33.198] [ 15693ms] [INFO    ] [PROCESS_MGR ] Process sonlandirildi: PID=3, Ad=AutoSave
+[17:59:33.198] [ 15693ms] [INFO    ] [MEMORY      ] PID=3 icin 512 sayfa serbest birakildi | Bos: 61440 frame
+[17:59:33.199] [ 15693ms] [INFO    ] [SCHEDULER   ] [T= 14] PID=3 (AutoSave) TAMAMLANDI | TA=14 | Bekleme=9
+[17:59:33.199] [ 15693ms] [INFO    ] [SCHEDULER   ] [T= 14] PID=1 (SuperMario) calistiriliyor | 3 birim | Kalan: 7 -> 4
+[17:59:33.199] [ 15694ms] [INFO    ] [SCHEDULER   ] [T= 17] PID=1 (SuperMario) calistiriliyor | 3 birim | Kalan: 4 -> 1
+[17:59:33.199] [ 15694ms] [INFO    ] [SCHEDULER   ] [T= 20] PID=1 (SuperMario) calistiriliyor | 1 birim | Kalan: 1 -> 0
+[17:59:33.199] [ 15694ms] [INFO    ] [PROCESS_MGR ] Process sonlandirildi: PID=1, Ad=SuperMario
+[17:59:33.200] [ 15694ms] [INFO    ] [MEMORY      ] PID=1 icin 4096 sayfa serbest birakildi | Bos: 65536 frame
+[17:59:33.200] [ 15694ms] [INFO    ] [SCHEDULER   ] [T= 21] PID=1 (SuperMario) TAMAMLANDI | TA=21 | Bekleme=7
+[17:59:33.200] [ 15695ms] [INFO    ] [MAIN        ] === CROSS-COMPONENT DEMO TAMAMLANDI ===
+[17:59:54.264] [ 36758ms] [INFO    ] [MAIN        ] === MUHENDISLIK ZORLUKLARI ===
+[17:59:54.265] [ 36759ms] [DEBUG   ] [CONCURRENCY ] Mutex olusturuldu: 'GPU_Access'
+[17:59:54.265] [ 36760ms] [INFO    ] [PRIORITY_INV] === PRIORITY INVERSION PROBLEMI GOSTERISI ===
+[17:59:54.266] [ 36760ms] [INFO    ] [PRIORITY_INV] Yuksek oncelikli render, dusuk oncelikli indirmeyi bekliyor!
+[17:59:54.266] [ 36761ms] [DEBUG   ] [CONCURRENCY ] Thread olusturuldu: LOW-Download (TID=1)
+[17:59:54.266] [ 36761ms] [DEBUG   ] [CONCURRENCY ] Thread olusturuldu: MED-Audio (TID=2)
+[17:59:54.267] [ 36761ms] [DEBUG   ] [CONCURRENCY ] Thread olusturuldu: HIGH-Render (TID=3)
+[17:59:54.267] [ 36762ms] [INFO    ] [CONCURRENCY ] Thread basladi: LOW-Download (TID=1)
+[17:59:54.268] [ 36762ms] [INFO    ] [PRIORITY_INV] DUSUK: GPU kilidi aliniyor...
+[17:59:54.268] [ 36763ms] [DEBUG   ] [CONCURRENCY ] 'GPU_Access' kilidi isteniyor (LOW-Download)
+[17:59:54.268] [ 36763ms] [INFO    ] [CONCURRENCY ] 'GPU_Access' kilidi alindi (LOW-Download) [toplam: 1]
+[17:59:54.269] [ 36763ms] [INFO    ] [PRIORITY_INV] DUSUK: GPU kilidi alindi, indirme basliyor...
+[17:59:54.278] [ 36773ms] [INFO    ] [CONCURRENCY ] Thread basladi: MED-Audio (TID=2)
+[17:59:54.279] [ 36773ms] [INFO    ] [CONCURRENCY ] Thread basladi: HIGH-Render (TID=3)
+[17:59:54.279] [ 36774ms] [INFO    ] [PRIORITY_INV] ORTA: Ses isleme basliyor...
+[17:59:54.304] [ 36799ms] [INFO    ] [PRIORITY_INV] YUKSEK: GPU kilidi isteniyor (RENDER)...
+[17:59:54.305] [ 36799ms] [DEBUG   ] [CONCURRENCY ] 'GPU_Access' kilidi isteniyor (HIGH-Render)
+[17:59:54.321] [ 36816ms] [INFO    ] [PRIORITY_INV] DUSUK: Indirme devam ediyor... %20
+[17:59:54.324] [ 36819ms] [INFO    ] [PRIORITY_INV] ORTA: Ses buffer 1/3 islendi
+[17:59:54.370] [ 36864ms] [INFO    ] [PRIORITY_INV] ORTA: Ses buffer 2/3 islendi
+[17:59:54.376] [ 36870ms] [INFO    ] [PRIORITY_INV] DUSUK: Indirme devam ediyor... %40
+[17:59:54.415] [ 36909ms] [INFO    ] [PRIORITY_INV] ORTA: Ses buffer 3/3 islendi
+[17:59:54.415] [ 36910ms] [INFO    ] [PRIORITY_INV] ORTA: Ses isleme tamamlandi
+[17:59:54.415] [ 36910ms] [INFO    ] [CONCURRENCY ] Thread bitti: MED-Audio (TID=2)
+[17:59:54.431] [ 36926ms] [INFO    ] [PRIORITY_INV] DUSUK: Indirme devam ediyor... %60
+[17:59:54.486] [ 36981ms] [INFO    ] [PRIORITY_INV] DUSUK: Indirme devam ediyor... %80
+[17:59:54.542] [ 37036ms] [INFO    ] [PRIORITY_INV] DUSUK: Indirme devam ediyor... %100
+[17:59:54.543] [ 37038ms] [INFO    ] [CONCURRENCY ] 'GPU_Access' kilidi alindi (HIGH-Render) [toplam: 2]
+[17:59:54.543] [ 37037ms] [INFO    ] [CONCURRENCY ] 'GPU_Access' kilidi birakildi (LOW-Download)
+[17:59:54.543] [ 37038ms] [INFO    ] [PRIORITY_INV] YUKSEK: GPU kilidi alindi! Render basliyor...
+[17:59:54.544] [ 37038ms] [INFO    ] [PRIORITY_INV] DUSUK: GPU kilidi birakildi, indirme tamamlandi
+[17:59:54.544] [ 37039ms] [INFO    ] [CONCURRENCY ] Thread bitti: LOW-Download (TID=1)
+[17:59:54.576] [ 37070ms] [INFO    ] [CONCURRENCY ] 'GPU_Access' kilidi birakildi (HIGH-Render)
+[17:59:54.577] [ 37071ms] [INFO    ] [PRIORITY_INV] YUKSEK: Render tamamlandi
+[17:59:54.577] [ 37072ms] [INFO    ] [CONCURRENCY ] Thread bitti: HIGH-Render (TID=3)
+[17:59:54.578] [ 37073ms] [INFO    ] [PRIORITY_INV] === PROBLEM GOSTERISI TAMAMLANDI ===
+[17:59:54.579] [ 37073ms] [DEBUG   ] [CONCURRENCY ] Mutex olusturuldu: 'SaveFile_Lock'
+[17:59:54.579] [ 37074ms] [DEBUG   ] [CONCURRENCY ] Mutex olusturuldu: 'Config_Lock'
+[17:59:54.579] [ 37074ms] [INFO    ] [DEADLOCK    ] === DEADLOCK GOSTERISI BASLADI ===
+[17:59:54.580] [ 37074ms] [DEBUG   ] [CONCURRENCY ] Thread olusturuldu: Thread-A (TID=4)
+[17:59:54.580] [ 37075ms] [DEBUG   ] [CONCURRENCY ] Thread olusturuldu: Thread-B (TID=5)
+[17:59:54.581] [ 37075ms] [INFO    ] [CONCURRENCY ] Thread basladi: Thread-B (TID=5)
+[17:59:54.581] [ 37075ms] [INFO    ] [CONCURRENCY ] Thread basladi: Thread-A (TID=4)
+[17:59:54.581] [ 37076ms] [INFO    ] [DEADLOCK    ] Thread-B: Config kilidi aliniyor...
+[17:59:54.582] [ 37076ms] [INFO    ] [DEADLOCK    ] Thread-A: SaveFile kilidi aliniyor...
+[17:59:54.582] [ 37077ms] [DEBUG   ] [CONCURRENCY ] 'Config_Lock' kilidi isteniyor (Thread-B)
+[17:59:54.582] [ 37077ms] [DEBUG   ] [CONCURRENCY ] 'SaveFile_Lock' kilidi isteniyor (Thread-A)
+[17:59:54.583] [ 37077ms] [INFO    ] [CONCURRENCY ] 'Config_Lock' kilidi alindi (Thread-B) [toplam: 1]
+[17:59:54.583] [ 37077ms] [INFO    ] [CONCURRENCY ] 'SaveFile_Lock' kilidi alindi (Thread-A) [toplam: 1]
+[17:59:54.583] [ 37078ms] [INFO    ] [DEADLOCK    ] Thread-B: Config kilidi alindi
+[17:59:54.583] [ 37078ms] [INFO    ] [DEADLOCK    ] Thread-A: SaveFile kilidi alindi
+[17:59:54.638] [ 37133ms] [INFO    ] [DEADLOCK    ] Thread-A: Config kilidi isteniyor...
+[17:59:54.638] [ 37133ms] [INFO    ] [DEADLOCK    ] Thread-B: SaveFile kilidi isteniyor...
+[17:59:56.642] [ 39136ms] [INFO    ] [DEADLOCK    ] Thread-A: DEADLOCK TESPIT EDILDI! Config kilidi alinamadi!
+[17:59:56.642] [ 39137ms] [INFO    ] [DEADLOCK    ] Thread-B: DEADLOCK TESPIT EDILDI! SaveFile kilidi alinamadi!
+[17:59:56.643] [ 39138ms] [INFO    ] [CONCURRENCY ] 'SaveFile_Lock' kilidi birakildi (Thread-A)
+[17:59:56.643] [ 39138ms] [INFO    ] [CONCURRENCY ] 'Config_Lock' kilidi birakildi (Thread-B)
+[17:59:56.644] [ 39139ms] [INFO    ] [CONCURRENCY ] Thread bitti: Thread-A (TID=4)
+[17:59:56.644] [ 39139ms] [INFO    ] [CONCURRENCY ] Thread bitti: Thread-B (TID=5)
+[17:59:56.645] [ 39140ms] [WARNING ] [DEADLOCK    ] Deadlock tespit edildi ve timeout ile cozuldu!
+[17:59:56.646] [ 39140ms] [INFO    ] [DEADLOCK    ] === DEADLOCK GOSTERISI TAMAMLANDI ===
+[17:59:56.646] [ 39141ms] [DEBUG   ] [CONCURRENCY ] Mutex olusturuldu: 'SaveFile_Lock'
+[17:59:56.647] [ 39141ms] [DEBUG   ] [CONCURRENCY ] Mutex olusturuldu: 'Config_Lock'
+[17:59:56.647] [ 39142ms] [INFO    ] [DEADLOCK    ] === GUVENLI (Lock Ordering) GOSTERISI ===
+[17:59:56.647] [ 39142ms] [DEBUG   ] [CONCURRENCY ] Thread olusturuldu: Thread-A-Safe (TID=6)
+[17:59:56.648] [ 39143ms] [DEBUG   ] [CONCURRENCY ] Thread olusturuldu: Thread-B-Safe (TID=7)
+[17:59:56.649] [ 39143ms] [INFO    ] [CONCURRENCY ] Thread basladi: Thread-A-Safe (TID=6)
+[17:59:56.650] [ 39144ms] [INFO    ] [CONCURRENCY ] Thread basladi: Thread-B-Safe (TID=7)
+[17:59:56.650] [ 39145ms] [INFO    ] [DEADLOCK    ] Thread-A (SAFE): SaveFile kilidi aliniyor...
+[17:59:56.651] [ 39146ms] [INFO    ] [DEADLOCK    ] Thread-B (SAFE): SaveFile kilidi aliniyor...
+[17:59:56.651] [ 39146ms] [DEBUG   ] [CONCURRENCY ] 'SaveFile_Lock' kilidi isteniyor (Thread-A-Safe)
+[17:59:56.652] [ 39146ms] [DEBUG   ] [CONCURRENCY ] 'SaveFile_Lock' kilidi isteniyor (Thread-B-Safe)
+[17:59:56.652] [ 39147ms] [INFO    ] [CONCURRENCY ] 'SaveFile_Lock' kilidi alindi (Thread-A-Safe) [toplam: 1]
+[17:59:56.653] [ 39147ms] [INFO    ] [DEADLOCK    ] Thread-A (SAFE): SaveFile kilidi alindi
+[17:59:56.653] [ 39148ms] [INFO    ] [DEADLOCK    ] Thread-A (SAFE): Config kilidi aliniyor...
+[17:59:56.654] [ 39148ms] [DEBUG   ] [CONCURRENCY ] 'Config_Lock' kilidi isteniyor (Thread-A-Safe)
+[17:59:56.655] [ 39150ms] [INFO    ] [CONCURRENCY ] 'Config_Lock' kilidi alindi (Thread-A-Safe) [toplam: 1]
+[17:59:56.656] [ 39150ms] [INFO    ] [DEADLOCK    ] Thread-A (SAFE): Her iki kilit alindi, islem yapiliyor...
+[17:59:56.681] [ 39176ms] [INFO    ] [CONCURRENCY ] 'Config_Lock' kilidi birakildi (Thread-A-Safe)
+[17:59:56.682] [ 39177ms] [INFO    ] [CONCURRENCY ] 'SaveFile_Lock' kilidi alindi (Thread-B-Safe) [toplam: 2]
+[17:59:56.682] [ 39177ms] [INFO    ] [CONCURRENCY ] 'SaveFile_Lock' kilidi birakildi (Thread-A-Safe)
+[17:59:56.682] [ 39177ms] [INFO    ] [DEADLOCK    ] Thread-B (SAFE): SaveFile kilidi alindi
+[17:59:56.683] [ 39177ms] [INFO    ] [DEADLOCK    ] Thread-A (SAFE): Tamamlandi
+[17:59:56.683] [ 39177ms] [INFO    ] [DEADLOCK    ] Thread-B (SAFE): Config kilidi aliniyor...
+[17:59:56.683] [ 39177ms] [INFO    ] [CONCURRENCY ] Thread bitti: Thread-A-Safe (TID=6)
+[17:59:56.683] [ 39178ms] [DEBUG   ] [CONCURRENCY ] 'Config_Lock' kilidi isteniyor (Thread-B-Safe)
+[17:59:56.683] [ 39178ms] [INFO    ] [CONCURRENCY ] 'Config_Lock' kilidi alindi (Thread-B-Safe) [toplam: 2]
+[17:59:56.684] [ 39178ms] [INFO    ] [DEADLOCK    ] Thread-B (SAFE): Her iki kilit alindi, islem yapiliyor...
+[17:59:56.709] [ 39203ms] [INFO    ] [CONCURRENCY ] 'Config_Lock' kilidi birakildi (Thread-B-Safe)
+[17:59:56.709] [ 39204ms] [INFO    ] [CONCURRENCY ] 'SaveFile_Lock' kilidi birakildi (Thread-B-Safe)
+[17:59:56.710] [ 39204ms] [INFO    ] [DEADLOCK    ] Thread-B (SAFE): Tamamlandi
+[17:59:56.710] [ 39205ms] [INFO    ] [CONCURRENCY ] Thread bitti: Thread-B-Safe (TID=7)
+[17:59:56.710] [ 39205ms] [INFO    ] [DEADLOCK    ] === GUVENLI GOSTERIS TAMAMLANDI ===

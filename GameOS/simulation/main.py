@@ -10,6 +10,7 @@ Bu program, bir oyun konsolunun isletim sistemini simule eder.
 import sys
 import os
 import time
+from collections import deque
 
 # Path ayarla
 sys.path.insert(0, os.path.dirname(__file__))
@@ -42,6 +43,7 @@ def print_banner():
     ║    [6] Hata Senaryolari                              ║
     ║    [7] Tam Simulasyon (Tum Bilesenler)               ║
     ║    [8] C Bridge Demo (Python <-> C)                  ║
+    ║    [9] Cross-Component: I/O Blocking Demo            ║
     ║    [0] Cikis                                         ║
     ║                                                      ║
     ╚══════════════════════════════════════════════════════╝
@@ -287,6 +289,155 @@ def demo_c_bridge():
     _demo()
 
 
+def demo_cross_component():
+    """
+    Bilesen 9: Cross-Component Etkilesim - I/O Blocking
+
+    Bu demo, zorunlu gereksinim #2'yi karsilar:
+      - Scheduler <-> ProcessManager: BLOCKED/READY durum gecisleri
+      - Scheduler <-> FileSystem: I/O talebi scheduler'i durdurur
+      - Scheduler <-> MemoryManager: BLOCKED surecinde bellek korunur
+
+    Senaryo:
+      3 process calisir (GAME, AUDIO, SAVE).
+      GAME process'i, zaman birimi 3'te dosya I/O talep eder.
+      Scheduler bu process'i BLOCKED yapar ve diger process'lere gecer.
+      I/O tamamlaninca GAME READY'e alinir, scheduler devam eder.
+    """
+    from process_manager import PCB, ProcessState
+
+    logger.info("MAIN", "=== CROSS-COMPONENT: I/O BLOCKING DEMO ===")
+
+    print("\n" + "=" * 65)
+    print("  Cross-Component Etkilesim: Scheduler <-> FileSystem <-> Memory")
+    print("=" * 65)
+
+    pm = ProcessManager()
+    mm = MemoryManager()
+    fs = FileSystem()
+
+    # --- Process'ler ve bellek tahsisi ---
+    game  = pm.create_process("SuperMario",  ProcessType.GAME,    priority=0, burst_time=10, memory_required=16384)
+    audio = pm.create_process("AudioEngine", ProcessType.AUDIO,   priority=1, burst_time=6,  memory_required=4096)
+    save  = pm.create_process("AutoSave",    ProcessType.SAVE,    priority=2, burst_time=4,  memory_required=2048)
+
+    for proc in [game, audio, save]:
+        mm.allocate(proc.pid, proc.memory_required)
+
+    fs.create_file("mario_save.sav", FileType.SAVE_DATA, game.pid)
+
+    # --- Manuel scheduler simulasyonu (I/O blocking ile) ---
+    print("\n--- Scheduler + I/O Blocking Simulasyonu ---")
+
+    # Zaman 0: Tum process'ler READY, kuyruga ekle
+    ready_queue = deque([game, audio, save])
+    blocked_queue = {}   # pid -> (process, io_complete_time)
+    io_done_pids = set() # Daha once I/O yapan process'leri takip et
+    current_time = 0
+    time_quantum = 3
+    IO_BLOCK_AT = 3      # GAME process'i 3. birimde I/O talep edecek
+
+    logger.info("SCHEDULER", f"Simulasyon basladi | {len(ready_queue)} process | Quantum={time_quantum}")
+
+    completed = []
+
+    while ready_queue or blocked_queue:
+
+        # Blocked process'lerin I/O'su tamamlandi mi kontrol et
+        unblocked = [pid for pid, (_, t) in blocked_queue.items() if t <= current_time]
+        for pid in unblocked:
+            proc, _ = blocked_queue.pop(pid)
+            pm.unblock_process(pid)
+            ready_queue.append(proc)
+            logger.info("SCHEDULER",
+                        f"[T={current_time:3d}] PID={pid} ({proc.name}) "
+                        f"I/O TAMAMLANDI -> READY, kuyruga geri eklendi")
+
+        if not ready_queue:
+            # Tum process'ler blocked, zamani ilerlet
+            if blocked_queue:
+                current_time += 1
+            continue
+
+        proc = ready_queue.popleft()
+
+        # I/O tetikleme: GAME process'i ilk kez 3 birim calistiktan sonra I/O talep eder (sadece bir kere)
+        if (proc.pid == game.pid
+                and proc.pid not in io_done_pids
+                and proc.burst_time - proc.remaining_time == IO_BLOCK_AT
+                and proc.remaining_time > 0):
+            logger.warning("SCHEDULER",
+                           f"[T={current_time:3d}] PID={proc.pid} ({proc.name}) "
+                           f"I/O TALEP ETTI (save dosyasi yazilacak)")
+            pm.block_process(proc.pid)
+            logger.info("SCHEDULER",
+                        f"[T={current_time:3d}] PID={proc.pid} BLOCKED -> ready queue'dan cikarildi")
+            logger.info("MEMORY",
+                        f"[T={current_time:3d}] PID={proc.pid} sayfalari bellekte KORUNUYOR (swap yok)")
+
+            # Dosya sistemi I/O islemini gerceklestir
+            fs.write_file("mario_save.sav",
+                          f'{{"level": 3, "score": 8400, "time": {current_time}}}',
+                          pid=game.pid)
+            logger.info("FILESYSTEM",
+                        f"[T={current_time:3d}] mario_save.sav yazma tamamlandi (PID={proc.pid})")
+
+            io_done_pids.add(proc.pid)
+            io_complete_time = current_time + 4   # 4 birim sonra I/O bitecek
+            blocked_queue[proc.pid] = (proc, io_complete_time)
+            logger.info("SCHEDULER",
+                        f"[T={current_time:3d}] I/O bekleniyor... T={io_complete_time}'de tamamlanacak")
+            current_time += 1
+            continue
+
+        # Normal calistirma
+        proc.state = ProcessState.RUNNING
+        exec_time = min(proc.remaining_time, time_quantum)
+
+        logger.info("SCHEDULER",
+                    f"[T={current_time:3d}] PID={proc.pid} ({proc.name}) "
+                    f"calistiriliyor | {exec_time} birim | "
+                    f"Kalan: {proc.remaining_time} -> {proc.remaining_time - exec_time}")
+
+        # Diger ready process'lerin bekleme suresini guncelle
+        for other in ready_queue:
+            other.wait_time += exec_time
+
+        proc.remaining_time -= exec_time
+        current_time += exec_time
+
+        if proc.remaining_time <= 0:
+            proc.state = ProcessState.TERMINATED
+            proc.turnaround_time = current_time
+            pm.terminate_process(proc.pid)
+            mm.free(proc.pid)
+            completed.append(proc)
+            logger.info("SCHEDULER",
+                        f"[T={current_time:3d}] PID={proc.pid} ({proc.name}) "
+                        f"TAMAMLANDI | TA={proc.turnaround_time} | Bekleme={proc.wait_time}")
+        else:
+            proc.state = ProcessState.READY
+            ready_queue.append(proc)
+
+    # --- Ozet ---
+    print(f"\n{'='*65}")
+    print("Cross-Component Etkilesim Ozeti")
+    print(f"{'='*65}")
+    print(f"{'PID':<6} {'Ad':<20} {'Burst':<8} {'Bekleme':<10} {'Turnaround'}")
+    print(f"{'-'*65}")
+    for p in completed:
+        print(f"{p.pid:<6} {p.name:<20} {p.burst_time:<8} {p.wait_time:<10} {p.turnaround_time}")
+    print(f"\nKanıtlanan etkilesimler:")
+    print("  [Scheduler <-> ProcessManager] : I/O sirasinda BLOCKED, bitis sonrasi READY")
+    print("  [Scheduler <-> FileSystem]     : Dosya yazma islemi scheduler'i bloke etti")
+    print("  [Scheduler <-> MemoryManager]  : BLOCKED surecinde bellek serbest birakilmadi")
+    print(f"{'='*65}")
+
+    fs.list_files()
+    mm.print_status()
+    logger.info("MAIN", "=== CROSS-COMPONENT DEMO TAMAMLANDI ===")
+
+
 def main():
     print_banner()
 
@@ -312,6 +463,8 @@ def main():
             full_simulation()
         elif choice == "8":
             demo_c_bridge()
+        elif choice == "9":
+            demo_cross_component()
         else:
             print("Gecersiz secim! 0-8 arasi bir sayi giriniz.")
 
