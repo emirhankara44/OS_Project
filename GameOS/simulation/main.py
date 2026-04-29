@@ -197,6 +197,8 @@ def demo_challenges():
     # Priority Inversion
     pi_demo = PriorityInversionDemo()
     pi_demo.demonstrate_problem()
+    print()
+    pi_demo.demonstrate_solution()
 
     print()
 
@@ -442,7 +444,7 @@ def main():
     print_banner()
 
     while True:
-        choice = input("\nSecim yapiniz (0-8): ").strip()
+        choice = input("\nSecim yapiniz (0-9): ").strip()
 
         if choice == "0":
             print("GameOS kapatiliyor... Hosca kalin!")
@@ -466,7 +468,7 @@ def main():
         elif choice == "9":
             demo_cross_component()
         else:
-            print("Gecersiz secim! 0-8 arasi bir sayi giriniz.")
+            print("Gecersiz secim! 0-9 arasi bir sayi giriniz.")
 
         input("\nDevam etmek icin Enter'a basin...")
 

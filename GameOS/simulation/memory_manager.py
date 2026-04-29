@@ -3,9 +3,9 @@ GameOS - Bellek Yonetimi (Python tarafı)
 
 Tasarim Karari: 256MB toplam bellek, 4KB sayfa boyutu.
 Oyun konsollarinda bellek sinirlidir, bu yuzden verimli
-tahsis ve serbest birakma kritiktir. LRU page replacement
-kullanilir cunku en son kullanilmayan sayfa muhtemelen
-tekrar kullanilmayacaktir.
+tahsis ve serbest birakma kritiktir. Bu simulator demand paging
+yerine tum process sayfalarini bastan tahsis eder; bellek yetmezse
+kontrollu OOM hatasi uretir.
 """
 
 from logger import logger
