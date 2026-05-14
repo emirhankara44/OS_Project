@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# C build artifacts
+*.o
+*.so
+scheduler_test
+memory_test
+
+# Logs
+*.log
